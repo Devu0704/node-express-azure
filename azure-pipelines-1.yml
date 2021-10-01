@@ -27,13 +27,3 @@ steps:
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
     
-- task: AzureWebApp@1
-  inputs:
-    azureSubscription: 'DAgility (44e26024-4977-4419-8d23-0e1e22e8804e)'
-    appType: 'webApp'
-    appName: 'appservice-deploy'
-    deployToSlotOrASE: true
-    resourceGroupName: 'Training-rg'
-    slotName: 'production'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    deploymentMethod: 'auto'
